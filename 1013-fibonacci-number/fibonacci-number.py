@@ -1,5 +1,7 @@
 class Solution:
     def fib(self, n: int) -> int:
+        #RECURSIVE APPROACH
+
         def recursive(n):
             if n==0 or n==1:
                 return n
@@ -8,6 +10,8 @@ class Solution:
             return sum1
         
         return recursive(n)
+
+
 
 
 
