@@ -4,12 +4,14 @@ class Solution:
         i=0
         j=len(s)-1
 
+        vowels = set('aeiouAEIOU')
+
         while(i<j):
-            if lst[i] not in ['a', 'e', 'i', 'o','u','A', 'E', 'I', 'O', 'U']:
+            if lst[i] not in vowels:
                 i+=1
-            if lst[j] not in ['a', 'e', 'i', 'o','u','A', 'E', 'I', 'O', 'U']:
+            if lst[j] not in vowels:
                 j-=1
-            if ((lst[i] in ['a', 'e', 'i', 'o','u','A', 'E', 'I', 'O', 'U']) and (lst[j] in ['a', 'e', 'i', 'o','u','A', 'E', 'I', 'O', 'U'])):
+            if ((lst[i] in vowels) and (lst[j] in vowels)):
                 lst[i],lst[j]=lst[j],lst[i]
                 j-=1
                 i+=1
