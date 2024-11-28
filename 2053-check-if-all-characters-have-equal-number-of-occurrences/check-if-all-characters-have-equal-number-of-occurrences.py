@@ -5,8 +5,10 @@ class Solution:
         for i in s:
             dict1[i]+=1
 
-        x = list(dict1.values())[0]
-        for i in dict1.values():
-            if i!=x:
-                return False
-        return True
+        # x = list(dict1.values())[0]
+        # for i in dict1.values():
+        #     if i!=x:
+        #         return False
+        # return True
+
+        return len(set(dict1.values())) == 1 
