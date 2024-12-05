@@ -3,16 +3,16 @@ class Solution:
         ans = []
         i=0
         j=0
-        while(i<len(word1) and j<len(word2)):
+        l1 = len(word1)
+        l2 = len(word2)
+        while(i<l1 and j<l2):
             ans.append(word1[i])
             i+=1
             ans.append(word2[j])
             j+=1
-        print(ans)
-        if len(word1)>len(word2):
+        if l1>l2:
             ans.append(word1[i:])
-        elif len(word1)<len(word2):
+        elif l1<l2:
             ans.append(word2[j:])
-        print(ans)
 
         return "".join(ans)
