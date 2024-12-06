@@ -3,7 +3,6 @@ class Solution:
         k =len(piles)-len(piles)//3
         piles.sort(reverse=True)
         sum1 = 0
-        for i in range(k+1):
-            if i%2==1:
-                sum1+=piles[i]
+        for i in range(1,k,2):
+            sum1+=piles[i]
         return sum1
