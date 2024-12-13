@@ -1,17 +1,37 @@
 class Solution:
     def sortVowels(self, s: str) -> str:
-        l1 = list(s)
-        vowels = {'a','e','i','o','u','A','E','I','O','U'}
-        l2 =[]
+
+        # # APPROACH 1-EX BRUTE
+        # l1 = list(s)
+        # vowels = set("aeiouAEIOU")
+        # vowel_list =[]
+        # for ch in s:
+        #     if ch in vowels:
+        #         vowel_list.append(ch)
+        # vowel_list.sort()
+        # print(vowel_list)
+        # j=0
+        # for i in range(len(l1)):
+        #     if l1[i] in vowels:
+        #         l1[i]=l2[j]
+        #         j+=1
+
+        # return "".join(l1)
+
+        # APPROACH 2
+        vowels = set("aeiouAEIOU")
+        vowel_list =[]
+        for ch in s:
+            if ch in vowels:
+                vowel_list.append(ch)
+        vowel_list.sort()
+
+        res = []
+        j=0
         for i in s:
             if i in vowels:
-                l2.append(i)
-        l2.sort()
-        print(l2)
-        j=0
-        for i in range(len(l1)):
-            if l1[i] in vowels:
-                l1[i]=l2[j]
+                res.append(vowel_list[j])
                 j+=1
-
-        return "".join(l1)
+            else:
+                res.append(i)
+        return "".join(res)
